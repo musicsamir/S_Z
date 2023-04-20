@@ -18,7 +18,7 @@ from .utils import (
 )
 
 
-LOGS = logging.getLogger("up")
+LOGS = logging.getLogger("zein")
 cmdhr = Config.COMMAND_HAND_LER
 
 print(zthon.__copyright__)
@@ -27,26 +27,26 @@ print(f"المرخصة بموجب شروط  {zthon.__license__}")
 cmdhr = Config.COMMAND_HAND_LER
 
 try:
-    LOGS.info("❃ بـدء تنزيـل سيمو ")
+    LOGS.info("⌭ بـدء تنزيـل سيمو ⌭")
     zedub.loop.run_until_complete(setup_bot())
-    LOGS.info("❃ بـدء تشغيـل البـوت ")
+    LOGS.info("⌭ بـدء تشغيـل البـوت ⌭")
 except Exception as e:
     LOGS.error(f"{e}")
     sys.exit()
 
 
 try:
-    LOGS.info("❃ جـار تفعيـل وضـع الانـلاين ")
+    LOGS.info("⌭ جـار تفعيـل وضـع الانـلاين ⌭")
     zedub.loop.run_until_complete(mybot())
-    LOGS.info("❃ تـم تفعيـل الانـلاين .. بـنجـاح ")
+    LOGS.info("✓ تـم تفعيـل الانـلاين .. بـنجـاح ✓")
 except Exception as e:
     LOGS.error(f"- {e}")
 
 
 try:
-    LOGS.info("❃ جـاري تحميـل الملحقـات ")
+    LOGS.info("⌭ جـاري تحميـل الملحقـات ⌭")
     zedub.loop.create_task(saves())
-    LOGS.info("❃ تـم تحميـل الملحقـات .. بنجـاح ")
+    LOGS.info("✓ تـم تحميـل الملحقـات .. بنجـاح ✓")
 except Exception as e:
     LOGS.error(f"- {e}")
 
@@ -55,7 +55,7 @@ async def startup_process():
     await verifyLoggerGroup()
     await load_plugins("plugins")
     await load_plugins("assistant")
-    LOGS.info(f"❃ تم  تنصيـب السورس . . بنجـاح")
+    LOGS.info(f"⌔┊تـم تنصيـب سيمو . . بنجـاح ✓")
     await verifyLoggerGroup()
     await add_bot_to_logger_group(BOTLOG_CHATID)
     if PM_LOGGER_GROUP_ID != -100:
@@ -64,7 +64,14 @@ async def startup_process():
     return
 
 
+async def externalrepo():
+    if Config.VCMODE:
+        await install_externalrepo(Config.VC_REPO, Config.VC_REPOBRANCH, "music_tele")
+
+
 zedub.loop.run_until_complete(startup_process())
+
+zedub.loop.run_until_complete(externalrepo())
 
 if len(sys.argv) in {1, 3, 4}:
     with contextlib.suppress(ConnectionError):
