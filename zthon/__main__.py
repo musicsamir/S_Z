@@ -27,7 +27,7 @@ print(f"المرخصة بموجب شروط  {zthon.__license__}")
 cmdhr = Config.COMMAND_HAND_LER
 
 try:
-    LOGS.info("⌭ بـدء تنزيـل سيمو ⌭")
+    LOGS.info("⌭ بـدء تنزيـل كرستين ⌭")
     zedub.loop.run_until_complete(setup_bot())
     LOGS.info("⌭ بـدء تشغيـل البـوت ⌭")
 except Exception as e:
@@ -55,7 +55,7 @@ async def startup_process():
     await verifyLoggerGroup()
     await load_plugins("plugins")
     await load_plugins("assistant")
-    LOGS.info(f"⌔┊تـم تنصيـب سيمو . . بنجـاح ✓")
+    LOGS.info(f"⌔┊تـم تنصيـب كرستين . . بنجـاح ✓")
     await verifyLoggerGroup()
     await add_bot_to_logger_group(BOTLOG_CHATID)
     if PM_LOGGER_GROUP_ID != -100:
@@ -66,7 +66,7 @@ async def startup_process():
 
 async def externalrepo():
     if Config.VCMODE:
-        await install_externalrepo(Config.VC_REPO, Config.VC_REPOBRANCH, "music_tele")
+        await install_externalrepo(Config.VC_REPO, Config.VC_REPOBRANCH, "savc")
 
 
 zedub.loop.run_until_complete(startup_process())
