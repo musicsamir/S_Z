@@ -30,7 +30,7 @@ class Config(object):
     TZ = os.environ.get("TZ", "Asia/Baghdad")
     # set this with required zed repo link
     UPSTREAM_REPO = os.environ.get(
-        "UPSTREAM_REPO", "https://github.com/musicsamir/S_Z"
+        "UPSTREAM_REPO", "https://github.com/Zeinn0/Zelzal"
     )
     # External plugins repo
     EXTERNAL_REPO = os.environ.get("EXTERNAL_REPO", None)
@@ -193,7 +193,7 @@ class Config(object):
     if OLDZED_REPO and not url(OLDZED_REPO):
         OLDZED_REPO = "https://github.com/Zed-Thon/ZED_USERBOT"
     OLDZED_REPOBRANCH = os.environ.get("OLDZED_REPOBRANCH", "oldzed")
-    VC_REPO = os.environ.get("VC_REPO", "https://github.com/musicsamir/savc")
+    VC_REPO = os.environ.get("VC_REPO", "https://github.com/zeinn0/crvc")
     VC_REPOBRANCH = os.environ.get("VC_REPOBRANCH", "beta")
 
 class Production(Config):
