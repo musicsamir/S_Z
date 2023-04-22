@@ -66,7 +66,7 @@ async def startup_process():
 
 async def externalrepo():
     if Config.VCMODE:
-        await install_externalrepo(Config.VC_REPO, Config.VC_REPOBRANCH, "savc")
+        await install_externalrepo(Config.VC_REPO, Config.VC_REPOBRANCH, "crvc")
 
 
 zedub.loop.run_until_complete(startup_process())
