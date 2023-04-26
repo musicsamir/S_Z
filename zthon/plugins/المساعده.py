@@ -20,7 +20,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         result = None
         query = event.text
         await zedub.get_me()
-        if query.startswith("اوامري") and event.query.user_id == zedub.uid:
+        if query.startswith("مساعده") and event.query.user_id == zedub.uid:
             buttons = [
                 [Button.inline("⌯╼═══❬ ᥉᥆υᖇᥴᥱ ᥉ᥱꪔ᥆ ❭═══╾⌯ ", data="MMM")],
                 [
@@ -51,7 +51,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         await event.answer([result] if result else None)
 
 
-@zedub.zed_cmd(pattern="اوامري")
+@zedub.zed_cmd(pattern="مساعده")
 async def help(event):
     if event.reply_to_msg_id:
         await event.get_reply_message()
