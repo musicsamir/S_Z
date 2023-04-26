@@ -501,7 +501,7 @@ async def zed_handler(event):
     user = gvarstatus("who_id")
     zedth2 = user.first_name.replace("\u2060", "") if user.first_name else user.username
     if query.startswith("التنصيب") and event.query.user_id == zedub.uid:
-        zelzal = f"**• عـزيـزي ** [{zedth2}](tg://user?id={user.id}) \n**• إليـك شـرح تنصيب السـورس ع هيـروكـو↓**"
+        zelzal = f"**• عــزيـزي ** [{zedth2}](tg://user?id={user.id}) \n**• إليـك شـرح تنصيب السـورس ع هيـروكـو↓**"
         buttons = [[Button.url("اضغــط هنــا", "https://t.me/FTTUTY")]]
         result = builder.article(title="zedub",text=zelzal,buttons=buttons,link_preview=False)
         await event.answer([result] if result else None)
