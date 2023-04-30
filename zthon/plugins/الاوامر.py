@@ -44,8 +44,8 @@ from . import SUDO_LIST, edit_delete, edit_or_reply, reply_id, BOTLOG, BOTLOG_CH
 
 LOGS = logging.getLogger(os.path.basename(__name__))
 LOGS1 = logging.getLogger(__name__)
-ZORDR = gvarstatus("Z_ORDR") or "اوامري"
-ZLORDR = gvarstatus("Z_LORDR") or "اوامري"
+ZORDR = gvarstatus("Z_ORDR") or "اوامر البوت" 
+ZLORDR = gvarstatus("Z_LORDR") or "اوامر البوت"
 ppath = os.path.join(os.getcwd(), "temp", "githubuser.jpg")
 GIT_TEMP_DIR = "./temp/"
 cmdhd = Config.COMMAND_HAND_LER
@@ -74,11 +74,11 @@ async def zed_handler(event):
     result = None
     query = event.text
     await zedub.get_me()
-    if query.startswith("اوامري") and event.query.user_id == zedub.uid:
+    if query.startswith("اوامر البوت") and event.query.user_id == zedub.uid:
         buttons = [[Button.inline("❶", data="ahmed1"), Button.inline("❷", data="ahmed2"), Button.inline("❸", data="ahmed3"), Button.inline("❹", data="ahmed4"),],[Button.inline("❺", data="ahmed5"), Button.inline("❻", data="ahmed6"), Button.inline("❼", data="ahmed7"), Button.inline("⇒", data="back1"),]]
         result = builder.article(title="zedub",text=Malath,buttons=buttons,link_preview=False)
         await event.answer([result] if result else None)
-@zedub.zed_cmd(pattern="اوامري(?: |$)(.*)")
+@zedub.zed_cmd(pattern="اوامر البوت(?: |$)(.*)")
 async def repozedub(event):
     if event.fwd_from:
         return
