@@ -75,7 +75,7 @@ async def zed_handler(event):
     query = event.text
     await zedub.get_me()
     if query.startswith("الاوامر") and event.query.user_id == zedub.uid:
-        buttons = [[Button.inline("❶", data="ahmed1"), Button.inline("❷", data="ahmed2"), Button.inline("❸", data="ahmed3"), Button.inline("❹", data="ahmed4"), Button.inline("❺", data="ahmed5"),],[Button.inline("❻", data="ahmed6"), Button.inline("❼", data="ahmed7"), Button.inline("➽", data="back1"),]]
+        buttons = [[Button.inline("❶", data="ahmed1"), Button.inline("❷", data="ahmed2"), Button.inline("❸", data="ahmed3"), Button.inline("❹", data="ahmed4"), Button.inline("❺", data="ahmed5"),],[Button.inline("❻", data="ahmed6"), Button.inline("❼", data="ahmed7"), Button.inline("❽", data="ahmed8"), Button.inline("❾", data="ahmed9"), Button.inline("➽", data="back1"),]]
         result = builder.article(title="zedub",text=Malath,buttons=buttons,link_preview=False)
         await event.answer([result] if result else None)
 @zedub.zed_cmd(pattern="الاوامر(?: |$)(.*)")
@@ -156,7 +156,7 @@ async def zed(event):
 @zedub.tgbot.on(CallbackQuery(data=re.compile(rb"aahmed")))
 @check_owner
 async def on_plug_in_callback_query_handler(event):
-    buttons = [[Button.inline("❶", data="ahmed1"), Button.inline("❷", data="ahmed2"), Button.inline("❸", data="ahmed3"), Button.inline("❹", data="ahmed4"),Button.inline("❺", data="ahmed5"),],[Button.inline("❻", data="ahmed6"), Button.inline("❼", data="ahmed7"), Button.inline("➽", data="back1"),]]
+    buttons = [[Button.inline("❶", data="ahmed1"), Button.inline("❷", data="ahmed2"), Button.inline("❸", data="ahmed3"), Button.inline("❹", data="ahmed4"),Button.inline("❺", data="ahmed5"),],[Button.inline("❻", data="ahmed6"), Button.inline("❼", data="ahmed7"), Button.inline("❽", data="ahmed8"), Button.inline("❾", data="ahmed9"), Button.inline("➽", data="back1"),]]
     await event.edit(Malath, buttons=buttons)
 @zedub.tgbot.on(CallbackQuery(data=re.compile(rb"back1")))
 @check_owner
