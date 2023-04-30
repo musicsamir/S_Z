@@ -55,7 +55,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
 async def help(event):
     if event.reply_to_msg_id:
         await event.get_reply_message()
-    response = await zedub.inline_query(Config.TG_BOT_USERNAME, "اوامري")
+    response = await zedub.inline_query(Config.TG_BOT_USERNAME, "مساعده")
     await response[0].click(event.chat_id)
     await event.delete()
 
@@ -92,7 +92,7 @@ async def _(event):
 @zedub.tgbot.on(CallbackQuery(data=re.compile(rb"botvr")))
 @check_owner
 async def _(event):
-    zelzal = "⤶ عـذراً عـزيـزي 🤷🏻‍♀\n⤶ هـذه اللوحه لا تشتغل في الخاص\n⤶ لـ إظهـار لوحـة المسـاعـدة 👇\n\n⤶ ارســل (`.اوامري`) في اي مجمـوعـه"
+    zelzal = "⤶ عـذراً عـزيـزي 🤷🏻‍♀\n⤶ هـذه اللوحه لا تشتغل في الخاص\n⤶ لـ إظهـار لوحـة المسـاعـدة 👇\n\n⤶ ارســل (`.مساعده`) في اي مجمـوعـه"
     try:
         await event.edit(
             "[ᯓ ⌯╼═══❬ ᥉᥆υᖇᥴᥱ ᥉ᥱꪔ᥆ ❭═══╾⌯  - اوامــر البـــوت 🦾🤖](t.me/FTTUTY) .\n\n**⎉╎اليك عـزيـزي شـࢪوحـات اوامـر البـوت المسـاعد :**\n\n",
