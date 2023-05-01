@@ -55,7 +55,7 @@ ALIVE_NAME = Config.ALIVE_NAME
 thumb_image_path = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg")
 Malath = f"🖥┊لـوحـة اوامـر سـيـمـو\n\n•①• اوامــر الـبحـث والـتحميـل\n\n•②• اوامــر الـبـوت\n\n•③• اوامــر الـوقـتـي\n\n•④• اوامــر الـكــروب¹\n\n•⑤• اوامــر الـكــروب²\n\n•⑥• اوامــر الـحسـاب\n\n•⑦• اوامــر الميـديـا والـصيــغ\n\n•⑧• اوامــر الـفــارات\n\n•⑨• اوامــر الخـدمــات العـامــهہ\n\n•❍• لعـرض بقيـة الاوامـر اضغـط زر ➽"
 Malotha = f"🖥 ┊ لـوحـة اوامـر سـيـمـو\n\n•⑧• اوامــر الـفــارات\n\n•⑨• اوامــر الخـدمــات العـامــهہ\n\n•⑩• اوامــر الالعــاب\n\n•⑪• اوامــر الـتســليــهہ\n\n•⑫• اوامــر التحشيـش\n\n•⑬• اوامــر الستـوريات\n\n•⑭• اوامــر الآفتــارات\n\n•⑮• اوامــر الصيــد والتشيكــر\n\n•⑯• اوامــر النشــر التلقــائي\n\n•⑰• اوامــر تجميــع النقــاط\n\n•⑱• اوامــر الاشتـراك الإجبـاري\n\n•❐• للذهـاب للوحـه التـاليـة اضغـط زر ➽"
-Malootha = f"🖥┊ لـوحـة اوامـر سـيـمـو\n\n•⑲• اوامــر الإضـافة والتفليــش\n\n•⑳• اوامر المحادثة الصوتية\n\n• 𝟏 𝟐 • اوامر إضافية ل السورس\n\n•❐• للرجـوع للوحـهہ الـرئيسيـة اضغـط زر ➽"
+Malootha = f"🖥┊ لـوحـة اوامـر سـيـمـو\n\n•𝟏𝟗• اوامــر الإضـافة والتفليــش\n\n•𝟐𝟎• اوامر المحادثة الصوتية\n\n•𝟐𝟏• اوامر إضافية ل السورس\n\n•𝟐𝟐• اوامر لعبة البنك\n\n•❐• للرجـوع للوحـهہ الـرئيسيـة اضغـط زر ➽"
 TG_BOT = Config.TG_BOT_USERNAME
 TM = time.strftime("%I:%M")
 Channels = f"**•❐•  مرحبـًا عـزيـزي  {mention} **\n**•❐• إليـك مجمـوعــة قنـوات سيمو ↵ 𝐒𝐀𝐌𝐈𝐑 ♥️**\n\n**•❐• استـخـدم الازرار بالاسفــل↓**"
@@ -170,7 +170,7 @@ async def on_plug_in_callback_query_handler(event):
 @zedub.tgbot.on(CallbackQuery(data=re.compile(rb"back2")))
 @check_owner
 async def on_plug_in_callback_query_handler(event):
-    buttons = [[Button.inline("⓳", data="ahmad19"), Button.inline("⓴", data="samir20"), Button.inline("𝟸𝟷", data="samir21"), Button.inline("➽", data="aahmed"),]]
+    buttons = [[Button.inline("𝟷𝟿", data="ahmad19"), Button.inline("𝟸𝟶", data="samir20"), Button.inline("𝟸𝟷", data="samir21"), Button.inline("𝟸𝟸", data="samir22"), Button.inline("➽", data="aahmed"),]]
     await event.edit(Malootha, buttons=buttons)
 @zedub.tgbot.on(CallbackQuery(data=re.compile(rb"ahmed1")))
 @check_owner
@@ -329,6 +329,15 @@ async def zed_handler(zedub):
     zilzal = [[Button.inline("رجــوع", data="back2")]]
     await zedub.edit(text, buttons=zilzal, link_preview=False)
 
+@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"samir21")))
+@check_owner
+async def zed_handler(zedub):
+    text = "
+ٴ⌯╼═══❬ ᥉᥆υᖇᥴᥱ ᥉ᥱꪔ᥆ ❭═══╾⌯\n\n• اوامر لعبة البنك لسورس سيمو\n\n`.انشاء حساب` (لانشاء حساب مصرفي)\n\n- مثال: `.انشاء بنك سيمو` او حساب الملوك\n\n1- `.استثمار` (مبلغ)\n\n- مثال :  `.استثمار 100`\n\n2- `.حظ` (المبلغ)\n\n- مثال :   `.حظ 100`\n\n3- `.راتب`\n\n4- `.كنز`\n\n5- `.بخشيش`\n\n6- `.فلوسي` | لرؤية فلوسك\n\n7- `.بنكي` او `.مصرفي` | لاضهار معلومات حسابك في المصرف\n\n8- .مسح حسابي | لحذف حسابك البنكي\n\nٴ⌯╼═══❬ ᥉᥆υᖇᥴᥱ ᥉ᥱꪔ᥆ ❭═══╾⌯"
+    zilzal = [[Button.inline("رجــوع", data="back2")]]
+    await zedub.edit(text, buttons=zilzal, link_preview=False)
+
+
 
 
 #لوحـة قنــوات الســورس
@@ -339,9 +348,9 @@ async def zed_handler(event):
     result = None
     query = event.text
     await zedub.get_me()
-    if query.startswith("تيبثون") and event.query.user_id == zedub.uid:
+    if query.startswith("سيمو") and event.query.user_id == zedub.uid:
         ZPIC = gvarstatus("ALIVE_PIC")
-        buttons = [[Button.url("قنـاة السـورس", "https://t.me/FTTUTY"),],[Button.url("التحـديثـات", "https://t.me/Tws_Tepthon"), Button.url("الفـارات", "https://t.me/FTTUTYe1"),],[Button.url("الشـروحـات¹", "https://t.me/Tws_Tepthon"),],[Button.url("كــلايــش تــيــبــثون", "https://t.me/FTTUTYklaesh"),],[Button.url("مطـور السـورس", "https://t.me/PPF22"),]]
+        buttons = [[Button.url("قنـاة السـورس", "https://t.me/FTTUTY"),],[Button.url("الكلايش", "https://t.me/PTTUTT"), Button.url("الفـارات", "https://t.me/var_semo"),],[Button.url("الشـروحـات", "https://t.me/FTTUTT7"),],[Button.url("جروب الدردشه", "https://t.me/FTTUTT0"),],[Button.url("مطـور السـورس", "https://t.me/FTTUTT"),]]
         if ZPIC and ZPIC.endswith((".jpg", ".png", "gif", "mp4")):
             result = builder.photo(ZPIC,text=Channels, buttons=buttons, link_preview=True)
         elif ZPIC and ZPIC.endswith((".gif", ".mp4")):
@@ -349,14 +358,14 @@ async def zed_handler(event):
         else:
             result = builder.article(title="zedub",text=Channels,buttons=buttons,link_preview=True)
         await event.answer([result] if result else None)
-@zedub.zed_cmd(pattern="تيبثون")
+@zedub.zed_cmd(pattern="سيمو")
 async def repozedub(event):
     if event.fwd_from:
         return
     TG_BOT = Config.TG_BOT_USERNAME
     if event.reply_to_msg_id:
         await event.get_reply_message()
-    response = await zedub.inline_query(TG_BOT, "تيبثون")
+    response = await zedub.inline_query(TG_BOT, "سيمو")
     await response[0].click(event.chat_id)
     await event.delete()
 
