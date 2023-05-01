@@ -125,7 +125,7 @@ async def bot_start(event):
             ],
             [
                 Button.inline("• اوامر البوت •", data="CMDBOT"),
-                Button.inline("• المطور •", ="t.me/FTTUTT"),
+                Button.inline("• المطور •", "t.me/FTTUTT"),
             ],
         ]
     try:
