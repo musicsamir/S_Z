@@ -168,7 +168,8 @@ async def varssett(event):
                 Button.inline("فارات الفحص", data="alivevar"),
                 Button.inline("فارات الحماية", data="pmvars"),
             ],
-            [Button.inline("فارات البروفايل", data="namevar")],
+            [Button.inline("فارات البروفايل", data="namevar"),
+             Button.inline("رجوع", data="setting")],
         ],
     )
 
