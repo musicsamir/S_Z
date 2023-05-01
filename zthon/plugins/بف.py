@@ -5,7 +5,7 @@ from zthon import CMD_HELP
 from zthon.utils import admin_cmd
 
 
-# Fixed by zein
+# Fixed by samir
 @borg.on(admin_cmd(pattern="بف ?(.*)"))
 async def _(dc):
 
@@ -22,18 +22,18 @@ async def _(dc):
         pass
 
     msg = ""
-    masg = await dc.get_reply_message()  # zein😒😒
+    masg = await dc.get_reply_message()  # samir😒😒
     if dc.reply_to_msg_id:
         await borg.send_message(chat_id, masg)
-        await dc.edit("⚜️الرساله وصلت يا كسول⚜️")
+        await dc.edit(" الرساله وصلت يا كسول 😹")
     for i in c[1:]:
         msg += i + " " 
-    if msg == "":  # بشخر ضحك
+    if msg == "":  
         return
     try:
         await borg.send_message(chat_id, msg)
-        await dc.edit("⚜️المسدج وصلت يكسول⚜️")
-    except BaseException:  # بتعمل اي 🤔🤔
+        await dc.edit(" المسدج وصلت يكسول 😹")
+    except BaseException:  
         await dc.edit(".بف (اليوزر) (الراساله)")
 
 
