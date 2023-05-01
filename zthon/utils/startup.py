@@ -74,6 +74,7 @@ async def setup_bot():
 
 async def startupmessage():
     if not gvarstatus("DEPLOY"):
+
         try:
             if BOTLOG:
                 await zedub.tgbot.send_file(
