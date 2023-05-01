@@ -15,15 +15,8 @@ from pathlib import Path
 
 from telethon import Button, functions, types, utils
 from telethon.tl.functions.channels import JoinChannelRequest
-from telethon.events import CallbackQuery
-from telethon.events import CallbackQuery
-from telethon.tl.functions.account import UpdateNotifySettingsRequest
-from telethon.tl.functions.contacts import UnblockRequest
-from telethon.tl.functions.messages import GetMessagesViewsRequest
-from telethon.tl.types import InputPeerNotifySettings
 
 from zthon import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
-from razan.CMD.utils import *
 
 from ..Config import Config
 from ..core.logger import logging
@@ -79,20 +72,21 @@ async def setup_bot():
         LOGS.error(f"STRING_SESSION - {e}")
         sys.exit()
 
-async def startupmessage():
-    if not gvarstatus("DEPLOY"):
 
-        try:
-            if BOTLOG:
-                await zedub.tgbot.send_file(
-                    BOTLOG_CHATID,
-                    "https://graph.org//file/c20c4f492da1811e1bef0.jpg",
-                    caption="**شكرا لتنصيبك سورس جمثون**\n • هنا بعض الملاحظات التي يجب ان تعرفها عن استخدامك لسورس جمثون.",
-                    buttons=[(Button.inline("اضغط هنا", data="initft_2"),)],
-                )
-                addgvar("DEPLOY", "Done")
-        except Exception as e:
-            LOGS.error(e)
+async def startupmessage():
+    """
+    Start up message in telegram logger group
+    """
+    try:
+        if BOTLOG:
+            Config.ZEDUBLOGO = await zedub.tgbot.send_file(
+                BOTLOG_CHATID,
+                "https://graph.org/file/7b0cb266c7f43002c9bbd.jpg",
+                caption="◉︙ بــوت سيمو يـعـمـل بـنـجـاح  **\n\n**◉︙ ارسل `.الاوامر` لرؤية اوامر السورس**\n\n**◉︙ تـحـيـاتـي المطور سـمـيـر",
+                buttons=[(Button.url(" المـطور سمير", "https://t.me/DEV_SAMIR"),)],
+            )
+    except Exception as e:
+        LOGS.error(e)
         return None
     try:
         msg_details = list(get_item_collectionlist("restart_update"))
@@ -118,43 +112,6 @@ async def startupmessage():
     except Exception as e:
         LOGS.error(e)
         return None
-
-@zedub.tgbot.on(CallbackQuery(data=re.compile(b"initft_(\\d+)")))
-async def deploy(e):
-    CURRENT = int(e.data_match.group(1))
-    if CURRENT == 5:
-        return await e.edit(
-            STRINGS[5],
-            buttons=[Button.inline("<< رجوع", data="initbk_4")],
-            link_preview=False,
-        )
-    await e.edit(
-        STRINGS[CURRENT],
-        buttons=[
-            Button.inline("<<", data=f"initbk_{str(CURRENT - 1)}"),
-            Button.inline(">>", data=f"initft_{str(CURRENT + 1)}"),
-        ],
-        link_preview=False,
-    )
-
-
-@zedub.tgbot.on(CallbackQuery(data=re.compile(b"initbk_(\\d+)")))
-async def ineiq(e):
-    CURRENT = int(e.data_match.group(1))
-    if CURRENT == 1:
-        return await e.edit(
-            STRINGS[1],
-            buttons=[Button.inline("اضغط للبدأ >>", data="initft_2")],
-            link_preview=False,
-        )
-    await e.edit(
-        STRINGS[CURRENT],
-        buttons=[
-            Button.inline("<<", data=f"initbk_{str(CURRENT - 1)}"),
-            Button.inline(">>", data=f"initft_{str(CURRENT + 1)}"),
-        ],
-        link_preview=False,
-    )
 
 
 async def mybot():
