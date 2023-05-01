@@ -17,7 +17,7 @@ from telethon import Button, functions, types, utils
 from telethon.tl.functions.channels import JoinChannelRequest
 
 from zthon import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
-
+from razan.CMD.utils import *
 from ..Config import Config
 from ..core.logger import logging
 from ..core.session import zedub
@@ -72,22 +72,22 @@ async def setup_bot():
         LOGS.error(f"STRING_SESSION - {e}")
         sys.exit()
 
-
 async def startupmessage():
-    """
-    Start up message in telegram logger group
-    """
-    try:
-        if BOTLOG:
-
-            Config.ZEDUBLOGO = await zedub.tgbot.send_file(
-                BOTLOG_CHATID,
-                "https://graph.org/file/7b0cb266c7f43002c9bbd.jpg",
-                caption="◉︙ بــوت سيمو يـعـمـل بـنـجـاح  **\n\n**◉︙ ارسل `.الاوامر` لرؤية اوامر السورس**\n\n**◉︙ تـحـيـاتـي المطور سـمـيـر",
-                buttons=[(Button.inline(" المـطور سمير", data"initft_2"),)],
-            )
-    except Exception as e:
-        LOGS.error(e)
+    if not gvarstatus("DEPLOY"):
+"""
+Start up message in telegram logger group
+""" 
+        try:
+            if BOTLOG:
+                await zedub.tgbot.send_file(
+                    BOTLOG_CHATID,
+                    "https://graph.org//file/c20c4f492da1811e1bef0.jpg",
+                    caption="**شكرا لتنصيبك سورس جمثون**\n • هنا بعض الملاحظات التي يجب ان تعرفها عن استخدامك لسورس جمثون.",
+                    buttons=[(Button.inline("اضغط هنا", data="initft_2"),)],
+                )
+                addgvar("DEPLOY", "Done")
+        except Exception as e:
+            LOGS.error(e)
         return None
     try:
         msg_details = list(get_item_collectionlist("restart_update"))
