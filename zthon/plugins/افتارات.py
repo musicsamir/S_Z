@@ -241,7 +241,7 @@ async def _(event):
         zedgan = [
             zlzzl77
             async for zlzzl77 in event.client.iter_messages(
-                "@L1BBBL", filter=InputMessagesFilterVoice
+                "@GYYLYY", filter=InputMessagesFilterVoice
             )
         ]
         aing = await event.client.get_me()
