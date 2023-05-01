@@ -84,7 +84,7 @@ async def startupmessage():
                 BOTLOG_CHATID,
                 "https://graph.org/file/7b0cb266c7f43002c9bbd.jpg",
                 caption="◉︙ بــوت سيمو يـعـمـل بـنـجـاح  **\n\n**◉︙ ارسل `.الاوامر` لرؤية اوامر السورس**\n\n**◉︙ تـحـيـاتـي المطور سـمـيـر",
-                buttons=[(Button.url(" المـطور سمير", data"initft_2"),)],
+                buttons=[(Button.inline(" المـطور سمير", data"initft_2"),)],
             )
     except Exception as e:
         LOGS.error(e)
