@@ -79,14 +79,27 @@ async def startupmessage():
     """
     try:
         if BOTLOG:
-            Config.ZEDUBLOGO = await zedub.tgbot.send_file(
-                BOTLOG_CHATID,
-                "https://graph.org/file/7b0cb266c7f43002c9bbd.jpg",
-                caption="◉︙ بــوت سيمو يـعـمـل بـنـجـاح  **\n\n**◉︙ ارسل `.الاوامر` لرؤية اوامر السورس**\n\n**◉︙ تـحـيـاتـي المطور سـمـيـر",
-                buttons=[(Button.url(" المـطور سمير", data"initft_2"),)],
-            )
-    except Exception as e:
-        LOGS.error(e)
+                await zedub.tgbot.send_file(
+                    BOTLOG_CHATID,
+                    "https://graph.org//file/c20c4f492da1811e1bef0.jpg",
+                    caption="**شكرا لتنصيبك سورس جمثون**\n • هنا بعض الملاحظات التي يجب ان تعرفها عن استخدامك لسورس جمثون.",
+                    buttons=[(Button.inline("اضغط هنا", data="initft_2"),)],
+                )
+                addgvar("DEPLOY", "Done")
+        except Exception as e:
+            LOGS.error(e)
+    else:
+        try:
+            if BOTLOG:
+                await zedub.tgbot.send_message(
+                    BOTLOG_CHATID,
+                    "**لقد تم بنجاح تنصيب سورس جمثون **\n➖➖➖➖➖➖➖➖➖➖\n**السورس**: @jmthon\n**المطور**: @R0R77\n➖➖➖➖➖➖➖➖➖➖\n**مجموعة الدعم**: @jmthon_support\n➖➖➖➖➖➖➖➖➖➖",
+                    buttons=[
+                        (Button.url("كروب المساعدة", "https://t.me/jmthon_support"),)
+                    ],
+                )
+        except Exception as e:
+            LOGS.error(e)
         return None
     try:
         msg_details = list(get_item_collectionlist("restart_update"))
