@@ -469,8 +469,8 @@ async def _(event):
     zzevent = await edit_or_reply(event, "**╮•⎚ جـارِ تحميـل القرأن ...𓅫╰**")
     try:
         samir0 = [
-            desah
-            async for desah in event.client.iter_messages(
+            dessah
+            async for dessah in event.client.iter_messages(
                 "@GYYLYY", filter=InputMessagesFilterVoice
             )
         ]
