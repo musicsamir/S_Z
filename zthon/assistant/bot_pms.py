@@ -88,7 +88,7 @@ async def bot_start(event):
     my_last = user.last_name
     my_fullname = f"{my_first} {my_last}" if my_last else my_first
     my_username = f"@{user.username}" if user.username else my_mention
-    custompic = gvarstatus("BOT_START_PIC") or "https://telegra.ph/file/2e5a217074c28d4a14cf6.mp4"
+    custompic = gvarstatus("BOT_START_PIC") or "https://graph.org/file/187ffc9dd318f502ec3c8.jpg"
     if chat.id != Config.OWNER_ID:
         customstrmsg = gvarstatus("START_TEXT") or None
         if customstrmsg is not None:
@@ -114,7 +114,11 @@ async def bot_start(event):
                     "المطور",
                     "t.me/FTTUTT1",
                 ),
-            )
+],
+[
+Button.url("اضف البوت لمجموعتڪ ✅", "https://t.me/semo15sbot?startgroup=true"),
+], 
+)        
         ]
     else:
         start_msg = "⌯╼═══❬ ᥉᥆υᖇᥴᥱ ᥉ᥱꪔ᥆ ❭═══╾⌯\n\n🎤╖ أهلآ بك عزيزي أنا بوت » سيمو\n\n⚙️╢ وظيفتي حماية المجموعات\n\n✅╢ لتفعيل البوت عليك اتباع مايلي\n\n🔘╢ أضف البوت إلى مجموعتك\n\n⚡️╜ أرفعه » مشرف\n\n  ⌯╼═══❬ ᥉᥆υᖇᥴᥱ ᥉ᥱꪔ᥆ ❭═══╾⌯"
@@ -125,7 +129,7 @@ async def bot_start(event):
             ],
             [
                 Button.inline("• اوامر البوت •", data="CMDBOT"),
-                Button.inline("• المطور •", data="t.me/FTTUTT1"),
+                Button.inline("• المطور •", "t.me/FTTUTT"),
             ],
         ]
     try:
