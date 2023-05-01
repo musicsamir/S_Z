@@ -162,7 +162,7 @@ async def on_plug_in_callback_query_handler(event):
 @check_owner
 async def on_plug_in_callback_query_handler(event):
     zelzal = "⤶ عذرًا عـزيـزي 🤷🏻‍♀\n⤶ هـذه اللوحه لا تشتغل في الخاص\n⤶ لـ إظهـار لوحـة الاوامـر هنـا 👇\n\n⤶ ارســل (.اوامري)"
-    buttons = [[Button.inline("❿", data="ahmad10"), Button.inline("⓫", data="ahmad11"),Button.inline("⓬", data="ahmad12"), Button.inline("⓭", data="ahmad13"), Button.inline("⓮", data="ahmad14"),],[Button.inline("➽", data="back2"),]]
+    buttons = [[Button.inline("❿", data="ahmad10"), Button.inline("⓫", data="ahmad11"),Button.inline("⓬", data="ahmad12"), Button.inline("⓭", data="ahmad13"), Button.inline("⓮", data="ahmad14"),],[Button.inline("⓯", data="ahmad15"), Button.inline("⓰", data="ahmad16"), Button.inline("⓱", data="ahmad17"), Button.inline("⓲", data="ahmad18"), Button.inline("➽", data="back2"),]]
     try:
         await event.edit(Malotha, buttons=buttons)
     except Exception:
