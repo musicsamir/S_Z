@@ -124,7 +124,7 @@ async def bot_start(event):
                 Button.inline("• الفارات •", data="setting"),
             ],
             [
-                Button.inline("• اوامـر البوت •", data="CMDBOT"),
+                Button.url("• قناة الكلايش •", "https://t.me/PTTUTT"),
                 Button.url("• المطور •", "t.me/FTTUTT"),
             ],
         ]
@@ -169,7 +169,7 @@ async def varssett(event):
                 Button.inline("فارات الحماية", data="pmvars"),
             ],
             [Button.inline("فارات البروفايل", data="namevar"),
-             Button.inline("رجوع", data="setting")],
+             Button.url("قناة الفارات", "https://t.me/VAR_SEMO")],
         ],
     )
 
