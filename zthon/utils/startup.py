@@ -85,9 +85,9 @@ async def startupmessage():
                     caption="**شكرا لتنصيبك سورس جمثون**\n • هنا بعض الملاحظات التي يجب ان تعرفها عن استخدامك لسورس جمثون.",
                     buttons=[(Button.inline("اضغط هنا", data="initft_2"),)],
                 )
-                addgvar("DEPLOY", "Done")
         except Exception as e:
-            LOGS.error(e)
+        LOGS.error(e)
+        return None
     else:
         try:
             if BOTLOG:
