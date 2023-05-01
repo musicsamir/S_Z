@@ -74,9 +74,6 @@ async def setup_bot():
 
 async def startupmessage():
     if not gvarstatus("DEPLOY"):
-"""
-Start up message in telegram logger group
-""" 
         try:
             if BOTLOG:
                 await zedub.tgbot.send_file(
