@@ -329,11 +329,10 @@ async def zed_handler(zedub):
     zilzal = [[Button.inline("رجــوع", data="back2")]]
     await zedub.edit(text, buttons=zilzal, link_preview=False)
 
-@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"samir21")))
+@zedub.tgbot.on(CallbackQuery(data=re.compile(rb"samir22")))
 @check_owner
 async def zed_handler(zedub):
-    text = "
-ٴ⌯╼═══❬ ᥉᥆υᖇᥴᥱ ᥉ᥱꪔ᥆ ❭═══╾⌯\n\n• اوامر لعبة البنك لسورس سيمو\n\n`.انشاء حساب` (لانشاء حساب مصرفي)\n\n- مثال: `.انشاء بنك سيمو` او حساب الملوك\n\n1- `.استثمار` (مبلغ)\n\n- مثال :  `.استثمار 100`\n\n2- `.حظ` (المبلغ)\n\n- مثال :   `.حظ 100`\n\n3- `.راتب`\n\n4- `.كنز`\n\n5- `.بخشيش`\n\n6- `.فلوسي` | لرؤية فلوسك\n\n7- `.بنكي` او `.مصرفي` | لاضهار معلومات حسابك في المصرف\n\n8- .مسح حسابي | لحذف حسابك البنكي\n\nٴ⌯╼═══❬ ᥉᥆υᖇᥴᥱ ᥉ᥱꪔ᥆ ❭═══╾⌯"
+    text = "ٴ⌯╼═══❬ ᥉᥆υᖇᥴᥱ ᥉ᥱꪔ᥆ ❭═══╾⌯\n\n• اوامر لعبة البنك لسورس سيمو\n\n`.انشاء حساب` (لانشاء حساب مصرفي)\n\n- مثال: `.انشاء بنك سيمو` او حساب الملوك\n\n1- `.استثمار` (مبلغ)\n\n- مثال :  `.استثمار 100`\n\n2- `.حظ` (المبلغ)\n\n- مثال :   `.حظ 100`\n\n3- `.راتب`\n\n4- `.كنز`\n\n5- `.بخشيش`\n\n6- `.فلوسي` | لرؤية فلوسك\n\n7- `.بنكي` او `.مصرفي` | لاضهار معلومات حسابك في المصرف\n\n8- .مسح حسابي | لحذف حسابك البنكي\n\nٴ⌯╼═══❬ ᥉᥆υᖇᥴᥱ ᥉ᥱꪔ᥆ ❭═══╾⌯"
     zilzal = [[Button.inline("رجــوع", data="back2")]]
     await zedub.edit(text, buttons=zilzal, link_preview=False)
 
@@ -348,7 +347,7 @@ async def zed_handler(event):
     result = None
     query = event.text
     await zedub.get_me()
-    if query.startswith("سيمو") and event.query.user_id == zedub.uid:
+    if query.startswith("تنصيب") and event.query.user_id == zedub.uid:
         ZPIC = gvarstatus("ALIVE_PIC")
         buttons = [[Button.url("قنـاة السـورس", "https://t.me/FTTUTY"),],[Button.url("الكلايش", "https://t.me/PTTUTT"), Button.url("الفـارات", "https://t.me/var_semo"),],[Button.url("الشـروحـات", "https://t.me/FTTUTT7"),],[Button.url("جروب الدردشه", "https://t.me/FTTUTT0"),],[Button.url("مطـور السـورس", "https://t.me/FTTUTT"),]]
         if ZPIC and ZPIC.endswith((".jpg", ".png", "gif", "mp4")):
@@ -358,14 +357,14 @@ async def zed_handler(event):
         else:
             result = builder.article(title="zedub",text=Channels,buttons=buttons,link_preview=True)
         await event.answer([result] if result else None)
-@zedub.zed_cmd(pattern="سيمو")
+@zedub.zed_cmd(pattern="تنصيب")
 async def repozedub(event):
     if event.fwd_from:
         return
     TG_BOT = Config.TG_BOT_USERNAME
     if event.reply_to_msg_id:
         await event.get_reply_message()
-    response = await zedub.inline_query(TG_BOT, "سيمو")
+    response = await zedub.inline_query(TG_BOT, "تنصيب")
     await response[0].click(event.chat_id)
     await event.delete()
 
@@ -464,7 +463,7 @@ async def zed_handler(event):
     await zedub.get_me()
     user = gvarstatus("who_id")
     zedth2 = user.first_name.replace("\u2060", "") if user.first_name else user.username
-    if query.startswith("الفيزا") and event.query.user_id == zedub.uid:
+    if query.startswith("الفييزا") and event.query.user_id == zedub.uid:
         zelzal = f"**• عـزيـزي ** [{zedth2}](tg://user?id={user.id}) \n**• إليـك الفيـزا الخـاصـه بهيـروكـو↓**"
         buttons = [[Button.url("اضغــط هنــا", "https://t.me/zzzlvv/64")]]
         result = builder.article(title="zedub",text=zelzal,buttons=buttons,link_preview=False)
