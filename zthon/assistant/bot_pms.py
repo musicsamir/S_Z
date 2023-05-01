@@ -110,15 +110,11 @@ async def bot_start(event):
         buttons = [
             (
                 Button.url("السورس", "https://t.me/FTTUTY"),
-                Button.url(
-                    "المطور",
-                    "t.me/FTTUTT1",
-                ),
+                Button.url(" المطور", "t.me/FTTUTT"),
 ],
 [
-Button.url("اضف البوت لمجموعتڪ ✅", "https://t.me/semo15sbot?startgroup=true"),
-], 
-)        
+                Button.url("اضف البوت لمجموعتڪ ✅", "https://t.me/semo15sbot?startgroup=true"),
+],        
         ]
     else:
         start_msg = "⌯╼═══❬ ᥉᥆υᖇᥴᥱ ᥉ᥱꪔ᥆ ❭═══╾⌯\n\n🎤╖ أهلآ بك عزيزي أنا بوت » سيمو\n\n⚙️╢ وظيفتي حماية المجموعات\n\n✅╢ لتفعيل البوت عليك اتباع مايلي\n\n🔘╢ أضف البوت إلى مجموعتك\n\n⚡️╜ أرفعه » مشرف\n\n  ⌯╼═══❬ ᥉᥆υᖇᥴᥱ ᥉ᥱꪔ᥆ ❭═══╾⌯"
