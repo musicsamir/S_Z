@@ -347,7 +347,7 @@ async def zed_handler(event):
     result = None
     query = event.text
     await zedub.get_me()
-    if query.startswith("تنصيب") and event.query.user_id == zedub.uid:
+    if query.startswith("سيمو") and event.query.user_id == zedub.uid:
         ZPIC = gvarstatus("ALIVE_PIC")
         buttons = [[Button.url("قنـاة السـورس", "https://t.me/FTTUTY"),],[Button.url("الكلايش", "https://t.me/PTTUTT"), Button.url("الفـارات", "https://t.me/var_semo"),],[Button.url("الشـروحـات", "https://t.me/FTTUTT7"),],[Button.url("جروب الدردشه", "https://t.me/FTTUTT0"),],[Button.url("مطـور السـورس", "https://t.me/FTTUTT"),]]
         if ZPIC and ZPIC.endswith((".jpg", ".png", "gif", "mp4")):
@@ -357,14 +357,14 @@ async def zed_handler(event):
         else:
             result = builder.article(title="zedub",text=Channels,buttons=buttons,link_preview=True)
         await event.answer([result] if result else None)
-@zedub.zed_cmd(pattern="تنصيب")
+@zedub.zed_cmd(pattern="سيمو")
 async def repozedub(event):
     if event.fwd_from:
         return
     TG_BOT = Config.TG_BOT_USERNAME
     if event.reply_to_msg_id:
         await event.get_reply_message()
-    response = await zedub.inline_query(TG_BOT, "تنصيب")
+    response = await zedub.inline_query(TG_BOT, "سيمو")
     await response[0].click(event.chat_id)
     await event.delete()
 
